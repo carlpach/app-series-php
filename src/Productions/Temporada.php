@@ -1,6 +1,6 @@
 <?php
 
-    namespace CarloWa5x\ExerSeries\Productions;
+    namespace Carlos\AppSeries\Productions;
 
     class Temporada {
 

@@ -1,8 +1,8 @@
 <?php
 
-    namespace CarloWa5x\ExerSeries\Productions;
+    namespace Carlos\AppSeries\Productions;
 
-    use CarloWa5x\ExerSeries\MultimediaElement;
+    use Carlos\AppSeries\MultimediaElement;
     use DateTime;
 
     class Capitulo  extends MultimediaElement {

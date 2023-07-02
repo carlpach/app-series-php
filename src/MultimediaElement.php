@@ -1,6 +1,6 @@
 <?php
 
-    namespace CarloWa5x\ExerSeries;
+    namespace Carlos\AppSeries;
 
     class MultimediaElement {
 

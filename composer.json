@@ -1,0 +1,15 @@
+{
+    "name": "carlos/app-series",
+    "autoload": {
+        "psr-4": {
+            "Carlos\\AppSeries\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "carlos",
+            "email": "carlos.pacheco@bootcamp-upgrade.com"
+        }
+    ],
+    "require": {}
+}
