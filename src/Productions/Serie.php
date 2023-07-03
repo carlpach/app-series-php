@@ -15,7 +15,7 @@
             
         }
 
-        public function addTemporada($temporada) {
+        public function addTemporada(Temporada $temporada) {
             array_push($this->temporadaList, $temporada); 
         }
 

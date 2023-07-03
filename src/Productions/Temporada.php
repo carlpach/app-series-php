@@ -13,8 +13,11 @@
             $this->year = $year;
         }
 
-        public function addCapitulo($capitulo) {
-            array_push($this->capitulosList, $capitulo); 
+        public function addCapitulo(Capitulo $capitulo) {
+            // array_push($this->capitulosList, $capitulo);
+            // o hacer esto. Es mas habitual:
+            $this->capitulosList[] = $capitulo;
+ 
         }
 
         public function getCapitulos() {

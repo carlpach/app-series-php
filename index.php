@@ -23,31 +23,32 @@
 
     require_once "index.html";
 
-    $cap1 = new Capitulo($_POST["titulo"], new DateTime($_POST["fecha"]), floatval($_POST["valoracion"]), intval($_POST["number"]), intval($_POST["duration"]));
+    // isempty() para arrays
+    if (isset($_POST["titulo"])) {
+        # code...
+        $cap1 = new Capitulo($_POST["titulo"], new DateTime($_POST["fecha"]), floatval($_POST["valoracion"]), intval($_POST["number"]), intval($_POST["duration"]));
 
-        
-    $number = $_POST["fecha"];
+        $number = $_POST["fecha"];
+
+        $tempUno->addCapitulo($cap1);
+
+        // get all capitulos of a serie in a given season
+        $allCapitulos = getCapitulos($tempUno);
 
 
+        echo "<h3 class='b-section' >Capitulos de la temporada $tempUno->number de la serie $serieFriends->name</h3>";
 
-    $tempUno->addCapitulo($cap1);
+        echo "<div class='capitulos'>";
+        foreach ($allCapitulos as $key => $capi) {
+            echo "<div class='capitulos__item'>";
+                echo "<p>$capi->titulo</p>";
+                $fechaTest = $capi->fecha->format('d F, Y');
+                echo "<p>$fechaTest</p>";
+                echo "<p>valoracio'n $capi->valoracion</p>";
+            echo "</div>";
 
-    // get all capitulos of a serie in a given season
-    $allCapitulos = getCapitulos($tempUno);
-
-
-    echo "<h3 class='b-section' >Capitulos de la temporada $tempUno->number de la serie $serieFriends->name</h3>";
-
-    echo "<div class='capitulos'>";
-    foreach ($allCapitulos as $key => $capi) {
-        echo "<div class='capitulos__item'>";
-            echo "<p>$capi->titulo</p>";
-            $fechaTest = $capi->fecha->format('d F, Y');
-            echo "<p>$fechaTest</p>";
-            echo "<p>valoracio'n $capi->valoracion</p>";
+        }
         echo "</div>";
-
     }
-    echo "</div>";
 
 
